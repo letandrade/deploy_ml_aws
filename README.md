@@ -82,7 +82,7 @@ Com o zip criado, fiz o upload do mesmo em um bucket no S3, para este exemplo fo
 
 ![image](https://github.com/user-attachments/assets/79a7c99f-ef9a-4647-97ea-a7fd366b2093)
 
-Para fazer o deploy da aplicação no Lambda precisei do link do arquivo funcao.zip e depois no painel do Lambda deve escolhi a opção “Localização no Amazon S3”, colei o link no espaço destinado e salvei a função.
+Para fazer o deploy da aplicação no Lambda precisei do link do arquivo funcao.zip e depois no painel do Lambda deve escolhi a opção “Localização do Amazon S3”, colei o link no espaço destinado e salvei a função.
 
 ![1](https://github.com/user-attachments/assets/1a04b500-ce6e-41ba-ad26-e13198c3887c)
 
