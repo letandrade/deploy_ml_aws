@@ -11,7 +11,7 @@ A proposta destaca não apenas a construção do modelo, mas também a importân
 
 A base de dados utilizada neste projeto foi obtida no repositório da UCI, através do seguinte link:
 
-🔗 [Amazon Product Review Dataset on Kaggle](https://archive.ics.uci.edu/dataset/445/absenteeism+at+work)/)
+🔗 [Absenteísmo no trabalho](https://archive.ics.uci.edu/dataset/445/absenteeism+at+work)/)
 
 > ⚠️ **Observação:** O banco de dados foi criado com registros de absenteísmo no trabalho no período de julho de 2007 a julho de 2010 em uma empresa de courier no Brasil.
 
