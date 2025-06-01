@@ -104,3 +104,8 @@ Avancei e finalizei os passos. A API foi criada com sucesso e a Amazon forneceu 
 
 ## **5.0 Resultados**
 
+Este projeto demonstrou de forma prática como realizar o deploy de um modelo de machine learning utilizando uma arquitetura serverless na AWS. 
+
+A abordagem adotada permitiu a implementação de uma solução de forma escalável, econômica e com menor complexidade operacional. 
+
+Arquiteturas como a citada facilitam a integração de modelos preditivos em ambientes de produção e maior autonomia dos cientistas de dados.
