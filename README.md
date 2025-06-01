@@ -66,7 +66,7 @@ Com a função criada, escolhi fazer o deploy do código através de um arquivo 
 
 **4.3 Criando a função Lambda**
 
-Criei um arquivo com o nome lambda_funcao.py, disponível no repositório. Basicamente, a função importa o modelo.pckl e faz a previsão via modelo.
+Criei um arquivo com o nome lambda_funcao.py, disponível no repositório. Basicamente, a função importa o best_model_rl.pkl e faz a previsão via modelo.
 
 O próximo passo foi criar o pacote zip de implantação do Lambda, para este exemplo o nome escolhido foi funcao.zip. O pacote está disponível no repositório.
 
