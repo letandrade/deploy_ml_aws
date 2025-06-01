@@ -29,8 +29,8 @@ API Gateway: Exposição de uma API REST para consumo externo, permitindo a comu
 
 ## **3.0 Ferramentas utilizadas**
 
-- Jupyter notebook:
-- Python:
+- Jupyter notebook:Ambiente de desenvolvimento.
+- Python: Pré-processamento, modelagem e avaliação.
 - Console AWS: S3, Lambda e API Gateway.
 
 ## **4.0 Desenvolvimento**
