@@ -57,7 +57,7 @@ Logada na conta AWS e no console do Lambda, segui os passos:
 Neste momento, criei uma permissão para o Lambda poder acessar o S3 internamente. Então em permissões, segui os passos:
 
 - Criar uma função a partir da política da AWS templates;
-- Nome da função (ex: access_lambda_to_s3);
+- Nome da função (ex: lambda_funcao);
 - Selecionar permissões de somente leitura de objetos do Amazon S3.
 
 ![image](https://github.com/user-attachments/assets/d776b37d-4957-45ef-8993-7c68ed024a65)
