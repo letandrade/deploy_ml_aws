@@ -37,24 +37,24 @@ API Gateway: Exposição de uma API REST para consumo externo, permitindo a comu
 
 **4.1 Criação e serialização do modelo**
 
-Todo o processo de criação do modelo está disponível no notebook. Trata-se de um modelo de propensão ao absenteísmo de um funcionário em um dia de trabalho. 
+odo o processo de criação do modelo está documentado no notebook Abessenteismo_no_trabalho.ipynb. O objetivo do modelo é prever a propensão de um funcionário se ausentar em um dia de trabalho.
 
-Como o foco deste projeto é o deploy do modelo, não vou entrar em detalhes sobre o processo de modelagem. 
+Como o foco principal deste projeto é o deploy do modelo, não entrarei em detalhes sobre a etapa de modelagem.
 
-É importante dizer que o modelo foi criado e gerado um arquivo picle que será usado no deploy.
+Vale destacar que o modelo foi treinado e salvo em um arquivo .pkl, o qual será utilizado no processo de deployment.
 
 **4.2 Iniciando com o Lambda**
 
-Logado na conta AWS e no console do Lambda, seguir os passos:
+Logada na conta AWS e no console do Lambda, segui os passos:
 
 - Criar função;
 - Criar do zero;
-- Digitar nome da função (ex: api_predicao_diabetes_ml);
+- Digitar nome da função (ex: api_predicao_abssenteismo_ml);
 - Versão da linguagem Python 3.10.
 
   ![image](https://github.com/user-attachments/assets/eabdf9af-3525-4586-85b6-f6e8e0130407)
 
-Neste momento, criei uma permissão, onde o Lambda possa acessar o S3 internamente. Então em permissões, segui os passos:
+Neste momento, criei uma permissão para o Lambda poder acessar o S3 internamente. Então em permissões, segui os passos:
 
 - Criar uma função a partir da política da AWS templates;
 - Nome da função (ex: access_lambda_to_s3);
@@ -66,30 +66,32 @@ Com a função criada, escolhi fazer o deploy do código através de um arquivo 
 
 **Criando a função Lambda**
 
-Agora o passo é criar um arquivo com o nome lambda_funcao.py, disponível no repositório. Basicamente, a função importa o modelo .pckl e faz a previsão via modelo.
+Criei um arquivo com o nome lambda_funcao.py, disponível no repositório. Basicamente, a função importa o modelo.pckl e faz a previsão via modelo.
 
-O próximo passo é criar o pacote zip de implantação do Lambda, para este exemplo o nome será funcao.zip, disponível no repositório.
+O próximo passo foi criar o pacote zip de implantação do Lambda, para este exemplo o nome escolhido foi funcao.zip. O pacote está disponível no repositório.
 
-O pacote deve conter as dependências das bibliotecas pandas, sckitlearn e numpy, usadas para criação do modelo. E a função Python que escrevemos. É importante dizer que precisam estar no mesmo nível de estruturas de pastas.
+O pacote contém as dependências das bibliotecas pandas e sckitlearn, usadas para criação do modelo. E a função Python para ser usada na lambda. É importante dizer que os arquivos precisam estar no mesmo nível de estruturas de pastas.
+
+![image](https://github.com/user-attachments/assets/d26d44b5-0a76-4c80-87c2-4be406e01eed)
+
+As demais dependências, como  pickle, boto3 e json, não precisam ser importadas pois já estão disponíveis no ambiente lambda. 
 
 **Deploy da função Lambda**
 
-Com o zip criado, precisamos realizar o upload do mesmo em um bucket no S3, para este exemplo foi criado um bucket chamado modelo-producao-diabetes e nele feito o upload do pacote que contém a função Lambda, o function.zip e o arquivo do nosso modelo, chamado modelo.pkl. Lembrando que o bucket não precisa ser público.
+Com o zip criado, fiz o upload do mesmo em um bucket no S3, para este exemplo foi criado um bucket chamado modelo-abssenteismo e nele feito o upload do pacote que contém a função Lambda, o funcao.zip e o arquivo do nosso modelo, chamado modelo.pkl. Lembrando que o bucket não precisa ser público.
 
 ![image](https://github.com/user-attachments/assets/79a7c99f-ef9a-4647-97ea-a7fd366b2093)
 
 
-Para fazer o deploy da aplicação no Lambda precisamos do link do arquivo funcao.zip e depois no painel do Lambda deve escolher a opção “Fazer upload de um arquivo do Amazon S3”, colar o link no espaço destinado e salvar a função.
+Para fazer o deploy da aplicação no Lambda precisei do link do arquivo funcao.zip e depois no painel do Lambda deve escolhi a opção “Fazer upload de um arquivo do Amazon S3”, colei o link no espaço destinado e salvei a função.
 
 ![1](https://github.com/user-attachments/assets/1a04b500-ce6e-41ba-ad26-e13198c3887c)
 
 **Configurando o API Gateway**
 
-Agora estamos na parte final, uma última configuração deve ser realizada. Disponibilizar a solução para o mundo externo ou interno, através de uma API.
+A última configuração a realizada foi a disponibilização da solução para o mundo externo ou interno, através de uma API.
 
-Neste exemplo será utilizado uma API do tipo HTTP, que é muito simples de configurar.
-
-Acesse o console do API Gateway e depois cliquei em API HTTP. Escolhi o nome e o tipo de integração, que no caso é com o Lambda. Quando selecionei Lambda, escolhi na lista a função desejada.
+Neste exemplo utilizei uma API do tipo HTTP. Acessei o console do API Gateway e depois cliquei em API HTTP. Escolhi o nome e o tipo de integração, que no caso é com o Lambda. Quando selecionei Lambda, escolhi na lista a função desejada.
 
 ![image](https://github.com/user-attachments/assets/2c65c89f-b7d6-45f4-810c-9462d57c0eda)
 
