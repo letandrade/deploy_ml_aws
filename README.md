@@ -37,7 +37,7 @@ API Gateway: Exposição de uma API REST para consumo externo, permitindo a comu
 
 **4.1 Criação e serialização do modelo**
 
-odo o processo de criação do modelo está documentado no notebook Abessenteismo_no_trabalho.ipynb. O objetivo do modelo é prever a propensão de um funcionário se ausentar em um dia de trabalho.
+Todo o processo de criação do modelo está documentado no notebook Abessenteismo_no_trabalho.ipynb. O objetivo do modelo é prever a propensão de um funcionário se ausentar em um dia de trabalho.
 
 Como o foco principal deste projeto é o deploy do modelo, não entrarei em detalhes sobre a etapa de modelagem.
 
