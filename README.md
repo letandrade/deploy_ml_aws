@@ -64,7 +64,7 @@ Neste momento, criei uma permissão para o Lambda poder acessar o S3 internament
 
 Com a função criada, escolhi fazer o deploy do código através de um arquivo zip armazenado no S3 pelo fato do arquivo zip ser maior que 10mb.
 
-**Criando a função Lambda**
+**4.3 Criando a função Lambda**
 
 Criei um arquivo com o nome lambda_funcao.py, disponível no repositório. Basicamente, a função importa o modelo.pckl e faz a previsão via modelo.
 
@@ -76,9 +76,9 @@ O pacote contém as dependências das bibliotecas pandas e sckitlearn, usadas pa
 
 As demais dependências, como pickle, boto3 e json, não precisam ser importadas pois já estão disponíveis no ambiente lambda. 
 
-**Deploy da função Lambda**
+**4.4 Deploy da função Lambda**
 
-Com o zip criado, fiz o upload do mesmo em um bucket no S3, para este exemplo foi criado um bucket chamado modelo-abssenteismo e nele feito o upload do pacote que contém a função Lambda, o funcao.zip e o arquivo do nosso modelo, chamado best_model_rl.pkl. Lembrando que o bucket não precisa ser público.
+Com o zip criado, fiz o upload do mesmo em um bucket no S3, para este exemplo foi criado um bucket chamado modelo-abssenteismo e nele feito o upload do arquivo funcao.zip (dependências + função lambda) e o arquivo do modelo (best_model_rl.pkl). Lembrando que o bucket não precisa ser público.
 
 ![image](https://github.com/user-attachments/assets/79a7c99f-ef9a-4647-97ea-a7fd366b2093)
 
@@ -86,7 +86,7 @@ Para fazer o deploy da aplicação no Lambda precisei do link do arquivo funcao.
 
 ![1](https://github.com/user-attachments/assets/1a04b500-ce6e-41ba-ad26-e13198c3887c)
 
-**Configurando o API Gateway**
+**4.5 Configurando o API Gateway**
 
 A última configuração a realizada foi a disponibilização da solução para o mundo externo ou interno, através de uma API.
 
