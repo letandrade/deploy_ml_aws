@@ -74,14 +74,13 @@ O pacote contém as dependências das bibliotecas pandas e sckitlearn, usadas pa
 
 ![image](https://github.com/user-attachments/assets/d26d44b5-0a76-4c80-87c2-4be406e01eed)
 
-As demais dependências, como  pickle, boto3 e json, não precisam ser importadas pois já estão disponíveis no ambiente lambda. 
+As demais dependências, como pickle, boto3 e json, não precisam ser importadas pois já estão disponíveis no ambiente lambda. 
 
 **Deploy da função Lambda**
 
-Com o zip criado, fiz o upload do mesmo em um bucket no S3, para este exemplo foi criado um bucket chamado modelo-abssenteismo e nele feito o upload do pacote que contém a função Lambda, o funcao.zip e o arquivo do nosso modelo, chamado modelo.pkl. Lembrando que o bucket não precisa ser público.
+Com o zip criado, fiz o upload do mesmo em um bucket no S3, para este exemplo foi criado um bucket chamado modelo-abssenteismo e nele feito o upload do pacote que contém a função Lambda, o funcao.zip e o arquivo do nosso modelo, chamado best_model_rl.pkl. Lembrando que o bucket não precisa ser público.
 
 ![image](https://github.com/user-attachments/assets/79a7c99f-ef9a-4647-97ea-a7fd366b2093)
-
 
 Para fazer o deploy da aplicação no Lambda precisei do link do arquivo funcao.zip e depois no painel do Lambda deve escolhi a opção “Fazer upload de um arquivo do Amazon S3”, colei o link no espaço destinado e salvei a função.
 
